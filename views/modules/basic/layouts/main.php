@@ -31,7 +31,7 @@ HtmlTagHelper::addTagOptions('html', 'lang', Yii::$app->language);
 <?php $this->beginBody(); ?>
 
 <?= ThemeParts::renderPart('pre-header') ?>
-<?= ThemeParts::renderPart('header') ?>
+<?= ThemeParts::renderPart('header') //Поиск, вход, корзина?>
 <?= ThemeParts::renderPart('post-header') //Меню категорий?>
 <?php
 

@@ -10,6 +10,7 @@ class ThemeAsset extends AssetBundle
     public $css = [
         // your css files will be here
         "styles/main.css",
+        "styles/navbar.css",
     ];
     public $js = [
         // your js files will be here

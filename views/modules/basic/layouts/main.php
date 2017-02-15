@@ -32,7 +32,7 @@ HtmlTagHelper::addTagOptions('html', 'lang', Yii::$app->language);
 
 <?= ThemeParts::renderPart('pre-header') ?>
 <?= ThemeParts::renderPart('header') ?>
-<?= ThemeParts::renderPart('post-header') ?>
+<?= ThemeParts::renderPart('post-header') //Меню категорий?>
 <?php
 
 use app\widgets\Alert;
@@ -55,7 +55,7 @@ if (empty($rightSidebar) === false) {
 ?>
 
 <div class="content-block">
-	<?= ThemeParts::renderPart('before-content') ?>
+	<?= ThemeParts::renderPart('before-content') //Карусель?>
 	<div class="container">
 		<div class="row">
 			<?php

@@ -73,6 +73,18 @@ $propertiesShowedInAnnounce = false;
                     }
                     ?>
                 </div>
+
+
+                <div class="varieties">  <!-- Разновидности товара -->
+                    <h3>Разновидности товара</h3>
+                    <?php
+                        echo app\web\theme\module\widgets\varieties\VarietiesWidget::widget(
+
+                        );
+                    ?>
+                </div>
+
+
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12 col-lg-4">
                 <div class="price-block">

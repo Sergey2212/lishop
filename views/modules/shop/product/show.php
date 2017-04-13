@@ -79,7 +79,9 @@ $propertiesShowedInAnnounce = false;
                     <h3>Разновидности товара</h3>
                     <?php
                         echo app\web\theme\module\widgets\varieties\VarietiesWidget::widget(
-
+                            [
+                                'model' => $model,
+                            ]
                         );
                     ?>
                 </div>

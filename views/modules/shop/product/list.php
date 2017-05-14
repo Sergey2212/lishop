@@ -56,11 +56,12 @@ $listView = UserPreferences::preferences()->getAttributes()['listViewType'];
                     'category_group_id' => $category_group_id,
                 ]
             );
-
             echo $this->render(($listView === 'listView' ? 'item-row' : 'item'),
                 ['product' => $product, 'url' => $url]);
             $this->endCache();
+
         }
+
     } ?>
     <?php
     if ($listView === 'blockView') {

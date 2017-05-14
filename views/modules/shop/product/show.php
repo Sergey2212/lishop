@@ -58,21 +58,7 @@ $propertiesShowedInAnnounce = false;
 
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12 col-lg-8">
-                <div itemprop="description">
-                    <?php
-                    if (empty($this->blocks['announce'])) {
-                        $propertiesShowedInAnnounce = true;
-                        echo \app\properties\PropertiesWidget::widget(
-                            [
-                                'model' => $model,
-                                'viewFile' => 'show-properties-widget',
-                            ]
-                        );
-                    } else {
-                        echo $this->blocks['announce'];
-                    }
-                    ?>
-                </div>
+
 
 
                 <div class="varieties">  <!-- Разновидности товара -->
@@ -113,6 +99,8 @@ $propertiesShowedInAnnounce = false;
                     <a href="#" class="btn btn-add-to-cart" data-action="add-to-cart" data-id="<?=$model->id?>">
                         <?=Yii::t('app', 'Add to')?> <i class="fa fa-shopping-cart"></i>
                     </a>
+                    <br/>
+                    <?=$model->id?>
                     <br/>
                     <a href='#' class="btn-add-to-compare" rel="nofollow" data-action="add-to-compare" data-id="<?=$model->id?>">
                         <?= Yii::t('app', 'Add to compare') ?>

@@ -73,5 +73,14 @@ class VarietiesWidget extends Widget
             ]
         );
     }
+
+
+    public function nameStaticValues($valueID, $property_id){
+        $valuesNames = PropertyStaticValues::find()
+            ->where (['id' => $valueID, 'property_id' => $property_id])
+            ->all();
+        return $valuesNames;
+    }
+
 }
 

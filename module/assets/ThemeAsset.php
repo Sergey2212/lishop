@@ -5,12 +5,13 @@ use yii\web\AssetBundle;
 
 class ThemeAsset extends AssetBundle
 {
-    public $basePath = '@webroot/theme/dist';
-    public $baseUrl = '@web/theme/dist';
+    public $basePath = '@webroot/theme/css';
+    public $baseUrl = '@web/theme/css';
     public $css = [
         // your css files will be here
-        "styles/main.css",
-        "styles/navbar.css",
+       "styles/main.css",
+       "navbar.css",
+        "variaties.css",
     ];
     public $js = [
         // your js files will be here

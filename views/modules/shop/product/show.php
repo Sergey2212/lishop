@@ -166,7 +166,6 @@ $propertiesShowedInAnnounce = false;
     </div>
 </div>
 
-
 <?php
 app\slider\sliders\slick\SlickAsset::register($this);
 $js = <<<JS

@@ -2,6 +2,7 @@
 use app\models\ObjectStaticValues;
 use app\models\PropertyStaticValues;
 use app\modules\shop\models\WarehouseProduct;
+use kartik\helpers\Html;
 ?>
 
 <div>
@@ -61,7 +62,7 @@ use app\modules\shop\models\WarehouseProduct;
             //echo $count;
             ?>
             <?php if($count != 0):?>
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success sizes">
                     <?= $value->name . ' ('.$count.')'?>
                 </button>
             <?php endif;?>
@@ -127,3 +128,16 @@ use app\modules\shop\models\WarehouseProduct;
 
 
 </div> <!-- /properties-widget -->
+
+
+<?= Html::jsFile('@web/theme/js/main.js') ?>
+
+    <script type="text/javascript">
+
+
+
+
+    </script>
+
+    <?php
+

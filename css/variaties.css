@@ -1,4 +1,41 @@
+/*Стиль для index(05.06.17)*/
+.not-selected {
+    display: inline-block;
+    background-color: #e7e7e7;
+    color: #000;
+    font-weight: 400;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
 
-.sizes {
-    background: #9fda58;
+.not-selected, .selected {
+    float: left;
+    margin: 8px 5px 0 0;
+    padding: 0 14px;
+    line-height: 32px!important;
+    height: 32px;
+    cursor: pointer;
+}
+
+.selected {
+    background: #50c8a1;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.selected {
+    display: inline-block;
+    color: #fff;
+}
+.selected {
+    font-weight: 700;
+}
+
+
+input.none {
+    display: none;
 }

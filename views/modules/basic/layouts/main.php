@@ -45,7 +45,7 @@ use yii\widgets\Breadcrumbs;
 $leftSidebar = ThemeParts::renderPart('left-sidebar');
 $rightSidebar = ThemeParts::renderPart('right-sidebar');
 $contentLength = 12;
-$leftSidebarLength = 3;
+$leftSidebarLength = 2;
 $rightSidebarLength = 3;
 
 if (empty($leftSidebar) === false) {

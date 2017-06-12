@@ -148,17 +148,15 @@ use kartik\helpers\Html;
 
     <script type="text/javascript">
 
-        function setColor (sizeProdId) {
-            var arSzlProdId = sizeProdId.split(',');
-            var strColProdId = $('div#colorButtons .selected').attr('for');
-            if(strColProdId){
-                var arColProdId = strColProdId.split(',');
-                console.log(getStrMatchArray(arSzlProdId, arColProdId));
-            }
-        }
 
 
 
+
+
+    $('label.label-size').click(function(){
+        $('label.label-size').removeClass('selected').addClass('not-selected');
+        $(this).removeClass('not-selected').addClass('selected');
+    });
 
 
 
@@ -194,5 +192,4 @@ use kartik\helpers\Html;
 
     </script>
 
-    <?php
 

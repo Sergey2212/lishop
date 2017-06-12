@@ -166,6 +166,8 @@ $propertiesShowedInAnnounce = false;
     </div>
 </div>
 
+
+<?= Html::jsFile('@web/theme/js/main.js') ?>
 <?php
 app\slider\sliders\slick\SlickAsset::register($this);
 $js = <<<JS
@@ -206,5 +208,9 @@ $(".other-images").on('click', '.slick-slide', function(){
     $(".first-image img").attr('src', img.attr('src'));
 
 });
+
+
+
+
 JS;
 $this->registerJs($js);

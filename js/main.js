@@ -54,12 +54,12 @@ function makeArrayFromString(str){
     return arr;
 }
 
-$(document).ready(function() {//Добавляет в label Цвет класс selected
+
     $('label.label-color').click(function(){
         $('label.label-color').removeClass('selected').addClass('not-selected');
         $(this).removeClass('not-selected').addClass('selected');
     });
-});
+
 
 
 $(function () { //Всплывающая подсказка на кнопках
@@ -87,5 +87,17 @@ for (var i = 0; i < objSize.length; i++) {
     arrSizeProductId.push(arrSzId);
 };
 //console.log(arrSizeProductId);
+
+
+        function setColor (sizeProdId) {
+            var arSzProdId = sizeProdId.split(',');
+            var strColProdId = $('div#colorButtons .selected').attr('for');
+            if(strColProdId){
+                var arColProdId = strColProdId.split(',');
+                var idProdCard = getStrMatchArray(arSzProdId, arColProdId); 
+                console.log(idProdCard);
+            }
+            $('.btn-add-to-cart').attr('data-id', idProdCard);
+        }
 
 

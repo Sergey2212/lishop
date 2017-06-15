@@ -89,15 +89,5 @@ for (var i = 0; i < objSize.length; i++) {
 //console.log(arrSizeProductId);
 
 
-        function setColor (sizeProdId) {
-            var arSzProdId = sizeProdId.split(',');
-            var strColProdId = $('div#colorButtons .selected').attr('for');
-            if(strColProdId){
-                var arColProdId = strColProdId.split(',');
-                var idProdCard = getStrMatchArray(arSzProdId, arColProdId); 
-                console.log(idProdCard);
-            }
-            $('.btn-add-to-cart').attr('data-id', idProdCard);
-        }
 
 

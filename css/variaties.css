@@ -10,7 +10,7 @@
     border-radius: 2px;
 }
 
-.not-selected, .selected {
+.not-selected, .selected, .halh-selected {
     float: left;
     margin: 8px 5px 0 0;
     padding: 0 14px;
@@ -35,6 +35,13 @@
     font-weight: 700;
 }
 
+.halh-selected {
+    background: #bdf0d1;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
 
 input.none {
     display: none;

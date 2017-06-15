@@ -144,37 +144,40 @@ use kartik\helpers\Html;
 </div> <!-- /properties-widget -->
 
 
-<?= Html::jsFile('@web/theme/js/main.js') ?>
+
 
     <script type="text/javascript">
 
 
+        $('label.label-size').click(function(){
+            $('label.label-size.selected').removeClass('selected').addClass('halh-selected');
+            $(this).removeClass('halh-selected').addClass('selected');
+        });
 
-
-
-
-    $('label.label-size').click(function(){
-        $('label.label-size').removeClass('selected').addClass('not-selected');
-        $(this).removeClass('not-selected').addClass('selected');
-    });
+        $('label.not-selected').click(function(){
+            $('label.label-size.not-selected').removeClass('halh-selected').addClass('not-selected');
+            $(this).removeClass('halh-selected').addClass('selected');
+        });
 
 
 
         function setSizes(colorProdId) {
             var arr = getIntersection(makeArrayFromString(colorProdId), arrSizeProductId);
-            console.log(colorProdId);
+//console.log(makeArrayFromString(colorProdId));
+
 //Получим данные обратно из localStorage в виде JSON:
             var json = localStorage.getItem('obj');
 //Преобразуем их обратно в объект JavaScript:
             var arr3 = JSON.parse(json);
             if (arr3) {
                 for (var i = 0; i < arr3.length; i++) {
-                    $('.label-size').removeClass('selected').addClass('not-selected');
+                    $('label.label-size').removeClass('selected halh-selected').addClass('not-selected');
                 };
             };
             var arr2 = [];
+            $('.label-size').attr('data-original-title', 'Нет в наличии Можно заказать');
             for (var i = 0; i < arr.length; i++) {
-                $('.label-size').eq(arr[i]).removeClass('not-selected').addClass('selected');
+                $('.label-size').eq(arr[i]).removeClass('not-selected').addClass('halh-selected').attr('data-original-title', 'Добавить в корзину');
                 arr2.push(arr[i]);
             };
 //Сериализуем его в "arr": [1, 2, 3]}':
@@ -182,6 +185,17 @@ use kartik\helpers\Html;
 //Запишем в localStorage с ключом obj:
             localStorage.setItem('obj', json);
 
+        }
+
+        function setColor (sizeProdId) {
+            var arSzProdId = sizeProdId.split(',');
+            var strColProdId = $('div#colorButtons .selected').attr('for');
+            if(strColProdId){
+                var arColProdId = strColProdId.split(',');
+                var idProdCard = getStrMatchArray(arSzProdId, arColProdId);
+                console.log(idProdCard);
+            }
+            $('.btn-add-to-cart').attr('data-id', idProdCard);
         }
 
         //Возвращает строку с числом которое есть в обоих массивах

@@ -73,6 +73,7 @@ use kartik\helpers\Html;
             <label for="<?= $stringColorId;?>"
                    data-toggle="tooltip"
                    data-trigger="hover"
+                   data-name ="<?= $value->name?>"
                    title="Нет в наличии"
                    class="not-selected label-color"
                    onclick = "setSizes('<?=$stringColorId?>')" >
@@ -131,9 +132,9 @@ use kartik\helpers\Html;
             <label for="<?= $stringSizeId?>"
                    data-toggle="tooltip"
                    data-trigger="hover"
-                   title="Нет в наличии"
+                   title="Выберите цвет"
                    class="not-selected label-size"
-                   onclick = "setColor('<?=$stringSizeId?>')">
+                   onclick = "setColor('<?=$stringSizeId?>', ' <?=$value->name?>')">
                 <?= $value->name .'('. $count . ')'?>
             </label>
         <?php endforeach;?>
@@ -151,13 +152,11 @@ use kartik\helpers\Html;
 
         $('label.label-size').click(function(){
             $('label.label-size.selected').removeClass('selected').addClass('halh-selected');
-            $(this).removeClass('halh-selected').addClass('selected');
-        });
-
-        $('label.not-selected').click(function(){
             $('label.label-size.not-selected').removeClass('halh-selected').addClass('not-selected');
             $(this).removeClass('halh-selected').addClass('selected');
         });
+
+     
 
 
 
@@ -187,15 +186,22 @@ use kartik\helpers\Html;
 
         }
 
-        function setColor (sizeProdId) {
+        function setColor (sizeProdId, nameSize) {
             var arSzProdId = sizeProdId.split(',');
             var strColProdId = $('div#colorButtons .selected').attr('for');
+            var nameColor = $('div#colorButtons .selected').attr('data-name');
             if(strColProdId){
                 var arColProdId = strColProdId.split(',');
                 var idProdCard = getStrMatchArray(arSzProdId, arColProdId);
-                console.log(idProdCard);
+                if(idProdCard){
+			$('.btn-add-to-cart').attr('data-id', idProdCard);
+                	console.log(idProdCard);
+		}else{
+			console.log(nameColor +  nameSize);
+		}
+                
             }
-            $('.btn-add-to-cart').attr('data-id', idProdCard);
+            
         }
 
         //Возвращает строку с числом которое есть в обоих массивах

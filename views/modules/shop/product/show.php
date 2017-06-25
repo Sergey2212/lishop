@@ -102,10 +102,7 @@ $propertiesShowedInAnnounce = false;
                     <br/>
                     <?=$model->id?>
                     <br/>
-                    <a href='#' class="btn-add-to-compare" rel="nofollow" data-action="add-to-compare" data-id="<?=$model->id?>">
-                        <?= Yii::t('app', 'Add to compare') ?>
-                    </a>
-                    <br/>
+                   
                     <a href='#' class="btn-add-to-wishlist" rel="nofollow" data-toggle="modal" data-target="#wishlist">
                         <?=Yii::t('app', 'Add to wishlist')?>
                     </a>

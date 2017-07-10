@@ -74,7 +74,7 @@ use kartik\helpers\Html;
                    data-toggle="tooltip"
                    data-trigger="hover"
                    data-name ="<?= $value->name?>"
-                   title="Нет в наличии"
+                   title="<?= $value->name?>"
                    class="not-selected label-color"
                    onclick = "setSizes('<?=$stringColorId?>')" >
                 <?= $value->name?>

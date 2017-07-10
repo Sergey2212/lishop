@@ -10,7 +10,7 @@
     border-radius: 2px;
 }
 
-.not-selected, .selected, .halh-selected {
+.not-selected, .selected, .halh-selected,  .not-size-selected{
     float: left;
     margin: 8px 5px 0 0;
     padding: 0 14px;
@@ -36,7 +36,15 @@
 }
 
 .halh-selected {
-    background: #bdf0d1;
+    background: #d0f6df;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.not-size-selected {
+    background: #f0b0ab;
     border: none;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;

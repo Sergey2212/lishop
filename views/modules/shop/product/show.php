@@ -96,7 +96,7 @@ $propertiesShowedInAnnounce = false;
 
                 </div>
                 <div class="cta">
-                    <a href="#" class="btn btn-add-to-cart" data-action="add-to-cart" data-id="<?=$model->id?>">
+                    <a  class="btn btn-add-to-cart"  data-action="" data-id="<?=$model->id?>" disabled>
                         <?=Yii::t('app', 'Add to')?> <i class="fa fa-shopping-cart"></i>
                     </a>
                     <br/>

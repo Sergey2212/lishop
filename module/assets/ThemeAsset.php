@@ -12,6 +12,7 @@ class ThemeAsset extends AssetBundle
        "styles/main.css",
        "navbar.css",
         "variaties.css",
+        "default-theme.css",
     ];
     public $js = [
         // your js files will be here

@@ -146,76 +146,12 @@ use kartik\helpers\Html;
 </div> <!-- /properties-widget -->
 
 
+<?php
+
+$js = <<<JS
 
 
-    <script type="text/javascript">
-
-
-        $('label.label-size').click(function(){
-            var dataSelect = $(this).attr('data-select');
-            if (dataSelect == 1){
-                $('label.label-size.selected').removeClass('selected').addClass('halh-selected');
-                $('label.label-size.not-selected').removeClass('halh-selected not-size-selected');
-                $(this).removeClass('halh-selected').addClass('selected');
-            }else{
-                $('label.label-size.selected').removeClass('selected').addClass('halh-selected');
-                $('label.label-size.not-size-selected').removeClass('not-size-selected');
-                $(this).addClass('not-size-selected');
-            }
-        });
-
-
-        function setSizes(colorProdId) {
-            var arr = getIntersection(makeArrayFromString(colorProdId), arrSizeProductId);
-//console.log(makeArrayFromString(colorProdId));
-
-//Получим данные обратно из localStorage в виде JSON:
-            var json = localStorage.getItem('obj');
-//Преобразуем их обратно в объект JavaScript:
-            var arr3 = JSON.parse(json);
-            if (arr3) {
-                for (var i = 0; i < arr3.length; i++) {
-                    $('label.label-size').removeClass('selected halh-selected not-size-selected').addClass('not-selected');
-                };
-            };
-            var arr2 = [];
-            $('.label-size').attr({'data-original-title' : 'Нет в наличии Можно заказать', 'data-select' : "0"});
-            for (var i = 0; i < arr.length; i++) {
-                $('.label-size').eq(arr[i]).removeClass('not-selected').addClass('halh-selected').attr({'data-original-title' :                         'Добавить в корзину' , 'data-select' : "1"});
-                arr2.push(arr[i]);
-            };
-//Сериализуем его в "arr": [1, 2, 3]}':
-            var json = JSON.stringify(arr2);
-//Запишем в localStorage с ключом obj:
-            localStorage.setItem('obj', json);
-
-        }
-
-        function setColor (sizeProdId, nameSize) {
-            var arSzProdId = sizeProdId.split(',');
-            var strColProdId = $('div#colorButtons .selected').attr('for');
-            var nameColor = $('div#colorButtons .selected').attr('data-name');
-            if(strColProdId){
-                var arColProdId = strColProdId.split(',');
-                var idProdCard = getStrMatchArray(arSzProdId, arColProdId);
-                if(idProdCard){
-			$('.btn-add-to-cart').attr({'data-id' : idProdCard, 'data-action'  : "add-to-cart", 'disabled' : false});
-                	console.log(idProdCard);
-		}else{
-             $('.btn-add-to-cart').attr({'data-action'  : "", 'disabled' : true});
-			console.log(nameColor +  nameSize);
-		}
-                
-            }
-            
-        }
-
-        //Возвращает строку с числом которое есть в обоих массивах
-        function getStrMatchArray (arr1, arr2) {
-            var str = getMatchArray(arr1, arr2).join('');
-            return str;
-        }
-
-    </script>
+JS;
+$this->registerJs($js);
 
 

@@ -27,8 +27,6 @@ HtmlTagHelper::addTagOptions('html', 'lang', Yii::$app->language);
 	<?= Html::csrfMetaTags() ?>
     <?php $this->head(); ?>
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
 <?php $this->beginBody(); ?>

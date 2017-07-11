@@ -164,7 +164,7 @@ $propertiesShowedInAnnounce = false;
 </div>
 
 
-<?= Html::jsFile('@web/theme/js/main.js') ?>
+
 <?php
 app\slider\sliders\slick\SlickAsset::register($this);
 $js = <<<JS

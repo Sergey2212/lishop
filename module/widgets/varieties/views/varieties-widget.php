@@ -162,7 +162,6 @@ use kartik\helpers\Html;
                 $('label.label-size.not-size-selected').removeClass('not-size-selected');
                 $(this).addClass('not-size-selected');
             }
-console.log(dataSelect);
         });
 
 

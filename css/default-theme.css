@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     background: rgba(247, 247, 247, 0.8);
     font-size: 11px;
     font-weight: 300;
-    color: #2563a3a;
+    color: #253a3a;
     padding: 14px;
     width: 100%; }
   .product-item:hover .product {
@@ -309,10 +309,14 @@ header.one-row-header-with-cart .logo img {
       left: 50%;
       margin-left: -20px;
       text-align: center;
-      padding: 0px; } }
+      padding: 0px; }
+  .main-nav, .top-panel-div, .top-panel-ul, nav #search, nav .main-ul {
+    display: none;
+  }}
 
 a {
-  color: #d1404a; }
+  outline: none !important; /* Убираем границу вокруг ссылок  */
+  color: #000000; }
 
 a:hover, a:focus {
   color: #b32b34; }
@@ -426,3 +430,73 @@ footer {
 .container.rows-padding-top-bottom-20 .row {
   padding-top: 20px;
   padding-bottom: 20px; }
+
+.top-panel{
+  background: #CCCCCC;
+  height: 30px;
+  width: 100%;
+  z-index: 22;
+  color: #333;
+  font-size: 14px;
+  position: relative;
+}
+
+.top-panel-ul {
+  height: 20px;
+  overflow: hidden;
+  list-style-type: none;
+  list-style-image: none;
+  list-style-position: outside
+}
+
+.top-panel a {
+
+  display: block;
+  float: left;
+  padding: 0 18px 0 0;
+  text-decoration: none;
+
+}
+.top-panel .top-left-ul li a, .top-panel a {
+  line-height: 30px;
+}
+
+.top-panel, .top-panel a {
+  position: relative;
+}
+
+#link-cabinet{
+  display: inline;
+  float: none;
+  padding: 0 3px 0 0;
+  font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

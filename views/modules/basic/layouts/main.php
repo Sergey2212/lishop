@@ -31,6 +31,15 @@ HtmlTagHelper::addTagOptions('html', 'lang', Yii::$app->language);
 <body itemscope itemtype="http://schema.org/WebPage">
 <?php $this->beginBody(); ?>
 
+
+
+
+
+
+
+
+
+
 <?= ThemeParts::renderPart('pre-header') ?>
 <?= ThemeParts::renderPart('header') //Поиск, вход, корзина?>
 <?= ThemeParts::renderPart('post-header') //Меню категорий?>

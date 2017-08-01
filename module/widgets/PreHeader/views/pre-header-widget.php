@@ -46,7 +46,8 @@ $navStyles = '';
                         <?php if (Yii::$app->user->isGuest === true): ?>
 
                             <a href="<?= \yii\helpers\Url::toRoute(['/user/user/login']) ?>" class="btn btn-login">
-                                <span style="color: #0a0a0a">Вход</span>
+                                <i class="glyphicon glyphicon-user login-icon"></i>
+                                <span id="a-ligin">Вход</span>
                             </a>
 
                         <?php else: ?>
@@ -108,7 +109,7 @@ $navStyles = '';
                         </a>
 
                         <a href="<?=Url::to(['/shop/wishlist'])?>" class="btn btn-wishlist">
-                            <i class="fa fa-heart"></i>
+                            <i class="fa fa-heart wishlist-icon"></i>
                             <span class="badge items-count" id="wishlist-count">
                                 <?= Wishlist::countItems((!Yii::$app->user->isGuest ? Yii::$app->user->id : 0), Yii::$app->session->get('wishlists', [])) ?>
                             </span>

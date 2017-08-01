@@ -382,7 +382,7 @@ header .nav .navigation-widget li {
   color: #3a3a3a;
   display: block; }
 .categories-list.sidebar-widget a:hover, .categories-list.sidebar-widget a:focus {
-  color: #b32b34;
+  color: #0a0a0a;;
   text-decoration: none; }
 
 .sidebar-widget.pages-list-widget .pages-list {
@@ -424,7 +424,16 @@ footer .navigation-widget {
   padding: 7px 18px 0 0;
 }
 
-.btn-compare, .btn-show-cart {
+.btn-login{
+  color: #0a0a0a;
+  font-weight: bold;
+}
+
+.btn-login:hover{
+  color: #0f7b0f;
+}
+
+.btn-compare, .btn-show-cart, .btn-wishlist {
   padding: 2px 12px;
   border: 2px solid;
 }
@@ -435,10 +444,32 @@ footer .navigation-widget {
   margin-top: 3px;
 }
 
+.btn-show-cart:hover {
+  background: rgba(27, 249, 27, 0.19);
+}
+
 .btn-compare{
   color: #256595;
   border-color: #256595;
   margin-top: 2px;
+  height: 29px;
+}
+
+.btn-compare:hover {
+  border-color: #256595 !important;
+  background: rgba(59, 169, 246, 0.16);
+  color: #256595;
+}
+
+.btn-wishlist{
+  color: #ce9713;
+  border-color: #ce9713;
+  margin-top: 3px;
+}
+
+.btn-wishlist:hover {
+  background: rgba(255, 185, 19, 0.27);
+  color: #ce9713;
 }
 
  .cart-icon {
@@ -446,8 +477,12 @@ footer .navigation-widget {
  }
 
  .compare-icon {
-   font-size: 16px;
+   font-size: 15px;
  }
+
+.wishlist-icon {
+  font-size: 17px;
+}
 
 #cart-count {
   top: -2px;
@@ -455,12 +490,14 @@ footer .navigation-widget {
 }
 
 #compare-count {
-  top: -2px;
+  top: -1px;
   background-color: #256595;
 }
 
-
-
+#wishlist-count {
+  top: -2px;
+  background-color: #ce9713;
+}
 
 
 

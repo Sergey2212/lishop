@@ -42,12 +42,11 @@ $navStyles = '';
             <div class="col-sm-8 col-md-9 top-panel-div">
 
                 <div class="pull-right personal-area">
-                    <div class="pull-right personal-area">
 
                         <?php if (Yii::$app->user->isGuest === true): ?>
 
                             <a href="<?= \yii\helpers\Url::toRoute(['/user/user/login']) ?>" class="btn btn-login">
-                                <span style="color: #0a0a0a">Личный кабинет</span>
+                                <span style="color: #0a0a0a">Вход</span>
                             </a>
 
                         <?php else: ?>
@@ -96,24 +95,25 @@ $navStyles = '';
 
                         <a href="<?= \yii\helpers\Url::toRoute(['/shop/cart']) ?>" class="btn btn-show-cart">
                             <i class="fa fa-shopping-cart cart-icon"></i>
-                            <span class="badge items-count">
-                    <?= $itemsCount ?>
-                </span>
+                            <span class="badge items-count" id="cart-count">
+                                <?= $itemsCount ?>
+                            </span>
                         </a>
+
                         <a href="<?=Url::to(['/shop/product-compare/compare'])?>" class="btn btn-compare" title="<?=Yii::t('app', 'Compare products')?>">
-                            <i class="fa fa-tags"></i>
-                            <span class="badge items-count">
-                    <?=count(Yii::$app->session->get('comparisonProductList')) ?>
-                </span>
+                            <i class="glyphicon glyphicon-stats compare-icon"></i>
+                            <span class="badge items-count" id="compare-count">
+                                <?=count(Yii::$app->session->get('comparisonProductList')) ?>
+                            </span>
                         </a>
+
                         <a href="<?=Url::to(['/shop/wishlist'])?>" class="btn btn-wishlist">
                             <i class="fa fa-heart"></i>
-                            <span class="badge items-count">
-                    <?= Wishlist::countItems((!Yii::$app->user->isGuest ? Yii::$app->user->id : 0), Yii::$app->session->get('wishlists', [])) ?>
-                </span>
+                            <span class="badge items-count" id="wishlist-count">
+                                <?= Wishlist::countItems((!Yii::$app->user->isGuest ? Yii::$app->user->id : 0), Yii::$app->session->get('wishlists', [])) ?>
+                            </span>
                         </a>
                     </div>
-                </div>
 
             </div>
         </div>

@@ -2,13 +2,32 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use kartik\icons\Icon;
+use app\modules\shop\models\Wishlist;
+/** @var yii\web\View $this */
+/**
+ * @var \app\modules\shop\models\Order $order
+ */
+/** @var bool $collapseOnSmallScreen */
+/** @var bool $useFontAwesome */
+/** @var \app\extensions\DefaultTheme\Module $theme */
+
+$mainCurrency = \app\modules\shop\models\Currency::getMainCurrency();
+if (is_null($order)) {
+    $itemsCount = 0;
+} else {
+    $itemsCount = $order->items_count;
+}
+
+$navStyles = '';
 
 ?>
 
-<div class="top-panel">
+    <div class="pre-header one-row-header-with-cart">
     <div class="container">
         <div class="row">
-            <ul class="col-sm-7 col-md-5 top-panel-ul">
+
+            <ul class="col-sm-4 col-md-3 top-panel-ul">
                 <li>
                     <a href="<?= \yii\helpers\Url::toRoute(['/about']) ?>">О нас</a>
                 </li>
@@ -19,20 +38,22 @@ use yii\helpers\Url;
                     <a href="<?= \yii\helpers\Url::toRoute(['/payment']) ?>">Оплата</a>
                 </li>
             </ul>
-            <div class="col-sm-5 col-md-7 top-panel-div">
-                <div class="right">
-                    <div class="personal-area">
+
+            <div class="col-sm-8 col-md-9 top-panel-div">
+
+                <div class="pull-right personal-area">
+                    <div class="pull-right personal-area">
+
                         <?php if (Yii::$app->user->isGuest === true): ?>
-                            <a href="<?= \yii\helpers\Url::toRoute(['/user/user/login']) ?>">
-                                Личный кабинет
+
+                            <a href="<?= \yii\helpers\Url::toRoute(['/user/user/login']) ?>" class="btn btn-login">
+                                <span style="color: #0a0a0a">Личный кабинет</span>
                             </a>
 
                         <?php else: ?>
-
-
                             <?= Yii::t('app', 'Hi') ?>,
                             <span class="dropdown">
-                    <a href="<?= \yii\helpers\Url::toRoute(['/shop/cabinet']) ?>" id="link-cabinet" data-toggle="dropdown" data-hover="dropdown"><?= Html::encode(Yii::$app->user->identity->username) ?></a>!
+                    <a href="<?= \yii\helpers\Url::toRoute(['/shop/cabinet']) ?>" class="link-cabinet" data-toggle="dropdown" data-hover="dropdown"><?= Html::encode(Yii::$app->user->identity->username) ?></a>!
                                 <?= \yii\widgets\Menu::widget([
                                     'items' => [
                                         [
@@ -70,13 +91,40 @@ use yii\helpers\Url;
                                     ],
                                 ]) ?>
                 </span>
-
-
                         <?php endif; ?>
+
+
+                        <a href="<?= \yii\helpers\Url::toRoute(['/shop/cart']) ?>" class="btn btn-show-cart">
+                            <i class="fa fa-shopping-cart cart-icon"></i>
+                            <span class="badge items-count">
+                    <?= $itemsCount ?>
+                </span>
+                        </a>
+                        <a href="<?=Url::to(['/shop/product-compare/compare'])?>" class="btn btn-compare" title="<?=Yii::t('app', 'Compare products')?>">
+                            <i class="fa fa-tags"></i>
+                            <span class="badge items-count">
+                    <?=count(Yii::$app->session->get('comparisonProductList')) ?>
+                </span>
+                        </a>
+                        <a href="<?=Url::to(['/shop/wishlist'])?>" class="btn btn-wishlist">
+                            <i class="fa fa-heart"></i>
+                            <span class="badge items-count">
+                    <?= Wishlist::countItems((!Yii::$app->user->isGuest ? Yii::$app->user->id : 0), Yii::$app->session->get('wishlists', [])) ?>
+                </span>
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
 
-    </div>
-</div>
+<?php
+
+if (Yii::$app->user->isGuest === false) {
+    $js = <<<JS
+$('.link-cabinet').dropdownHover();
+JS;
+    $this->registerJs($js);
+
+}

@@ -414,6 +414,10 @@ footer .navigation-widget {
   margin-top: 20px;
   margin-bottom: 20px; }
 
+.pre-header {
+   background: #e4dcf0;
+}
+
 .container.rows-padding-top-bottom-20 .row {
   padding-top: 20px;
   padding-bottom: 20px; }
@@ -434,7 +438,7 @@ footer .navigation-widget {
 
 .btn-compare, .btn-show-cart, .btn-wishlist {
   padding: 2px 12px;
-  border: 2px solid;
+  border: 1px solid;
 }
 
 .btn-show-cart {
@@ -448,10 +452,11 @@ footer .navigation-widget {
 }
 
 .btn-compare{
+    background: inherit;
   color: #256595;
   border-color: #256595;
   margin-top: 2px;
-  height: 29px;
+  height: 27px;
 }
 
 .btn-compare:hover {
@@ -498,9 +503,15 @@ footer .navigation-widget {
   background-color: #ce9713;
 }
 
+.xs-glyphicon{
+  color: #750d2a;
+  font-size: 25px;
+}
 
-
-
+.xs-logo{
+  min-height: 45px;
+  max-height: 65px;
+}
 
 
 

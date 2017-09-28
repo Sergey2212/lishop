@@ -1,13 +1,13 @@
 <?php
 
-namespace app\web\theme\module\widgets\PreHeader;
+namespace app\web\theme\module\widgets\Header;
 
 use app\extensions\DefaultTheme\components\BaseWidget;
 
-class PreHeaderWidget extends BaseWidget
+class HeaderWidget extends BaseWidget
 {
     public function widgetRun()
     {
-        return $this->render('pre-header-widget');
+        return $this->render('header-widget');
     }
 }

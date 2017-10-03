@@ -513,7 +513,10 @@ footer .navigation-widget {
   max-height: 65px;
 }
 
-
+.header-logo{
+  min-height: 65px;
+  max-height: 85px;
+}
 
 
 
